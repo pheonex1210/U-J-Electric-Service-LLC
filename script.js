@@ -1,7 +1,17 @@
-const button = document.getElementById('colorButton');
+const toggleButton = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const themeText = document.getElementById('theme-text');
 
-button.addEventListener('click', () => {
-    // Generate a random color
-    const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-    document.body.style.backgroundColor = randomColor;
+toggleButton.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeIcon.className = 'fas fa-moon';
+        themeText.textContent = 'Dark Mode';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeIcon.className = 'fas fa-sun';
+        themeText.textContent = 'Light Mode';
+    }
 });
