@@ -292,13 +292,15 @@ nav a { color: white; text-decoration: none; font-weight: bold; }
 
 /* --- FIXED FOOTER --- */
 footer {
+    margin-top: auto; /* Pushes footer to the absolute bottom */
     background-color: #1a1a1a;
-    color: white;
+    color: #ffffff;
     width: 100%;
-    padding: 50px
+    padding: 60px 0 20px 0;
     border-top: 3px solid var(--btn-yellow);
     flex-shrink: 0; /* Ensures the footer doesn't get squashed */
     text-align: center;
+    clear: both;
 }
 
 .footer-content {
